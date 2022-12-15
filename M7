@@ -602,7 +602,7 @@ function M7Lib:Window(WindowConfig)
 
 
         local SectionsLib = {}
-        function SectionsLib:Section(SectionConfig)
+        function SectionsLib:AddSection(SectionConfig)
             SectionConfig = SectionConfig or {}
             SectionConfig.Name = SectionConfig.Name or "Section"
 
@@ -651,7 +651,7 @@ function M7Lib:Window(WindowConfig)
             
             
             local ItemsLib = {}
-            function ItemsLib:Button(ButtonConfig, ButtonParent, ButtonBackgroundColor)
+            function ItemsLib:AddButton(ButtonConfig, ButtonParent, ButtonBackgroundColor)
                 ButtonConfig = ButtonConfig or {}
                 ButtonConfig.Name = ButtonConfig.Name or "Button"
                 ButtonConfig.Callback = ButtonConfig.Callback or function() end
@@ -744,7 +744,7 @@ function M7Lib:Window(WindowConfig)
             end
 
             
-            function ItemsLib:Toggle(ToggleConfig, ToggleParent, ToggleBackgroundColor)
+            function ItemsLib:AddToggle(ToggleConfig, ToggleParent, ToggleBackgroundColor)
                 ToggleConfig = ToggleConfig or {}
                 ToggleConfig.Name = ToggleConfig.Name or "Toggle"
                 ToggleConfig.Defualt = ToggleConfig.Defualt or false
@@ -857,7 +857,7 @@ function M7Lib:Window(WindowConfig)
                 end)
             end
 
-            function ItemsLib:Slider(SliderConfig, SliderParent, SliderBackgroundColor, SliderFrameBackgroundColor)
+            function ItemsLib:AddSlider(SliderConfig, SliderParent, SliderBackgroundColor, SliderFrameBackgroundColor)
                 SliderConfig = SliderConfig or {}
                 SliderConfig.Name = SliderConfig.Name or "Slider"
                 SliderConfig.Min = SliderConfig.Min or 0
@@ -978,7 +978,7 @@ function M7Lib:Window(WindowConfig)
                 end)
             end
 
-            function ItemsLib:Label(LabelConfig, LabelParent)
+            function ItemsLib:AddLabel(LabelConfig, LabelParent)
                 LabelConfig = LabelConfig or {}
                 LabelConfig.Description = LabelConfig.Description or "Description"
                 LabelParent = LabelParent or Section
@@ -1249,7 +1249,7 @@ function M7Lib:Window(WindowConfig)
                 end)
             end
 
-            function ItemsLib:Dropdown(DropdownConfig)
+            function ItemsLib:AddDropdown(DropdownConfig)
                 DropdownConfig = DropdownConfig or {}
                 DropdownConfig.Name = DropdownConfig.Name or "Dropdown"
                 DropdownConfig.Items = DropdownConfig.Items or {}

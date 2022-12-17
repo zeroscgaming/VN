@@ -6,7 +6,7 @@ w1:Button(
     "SuperAttackMode ON",
     function()
         print("SuperFastMode")
-local SuperFastMode = false -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
+local SuperFastMode = true -- Change to true if you want Super Super Super Fast attack (Like instant kill) but it will make the game kick you more than normal mode
 
 local plr = game.Players.LocalPlayer
 

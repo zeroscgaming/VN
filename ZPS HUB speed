@@ -1,0 +1,36 @@
+local library = loadstring(game:HttpGet("https://raw.githubusercontent.com/NiceBBMBThai12/NBTScript/main/UI-Library-Robloxx"))()
+local window = library:Win()
+local tap1 = window:addtap("Zps-Hub")
+local page1 = tap1:addpage()
+local page2 = tap1:addpage()
+page1:Ti("Misc")
+page2:Ti("credit")
+local getlable = page2:Label("zeroZpsgaming")
+local getlable = page2:Label("ZPS-HUB")
+
+local getslider = page1:Slder("Speed X",1,10000,0, function(value)
+TargetWalkspeed = value
+end)
+
+game:GetService("RunService").RenderStepped:Connect(function()
+    pcall(function()
+        if game.Players.LocalPlayer.Character.Humanoid.MoveDirection.Magnitude > 0 then
+            game.Players.LocalPlayer.Character:TranslateBy(game.Players.LocalPlayer.Character.Humanoid.MoveDirection * TargetWalkspeed/100)
+        end
+    end)
+end)
+
+page1:Button("Jump X [lv 500]",nil, function(value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 500
+end)
+
+page1:Button("Jump X [lv 100]",nil, function(value)
+game.Players.LocalPlayer.Character.Humanoid.JumpPower = 100
+end)
+
+page1:Button("inf jump [control Z]",nil, function(value)
+_G.infinjump = value
+end)
+
+_G.infinjump = true   local Player = game:GetService("Players").LocalPlayer local Mouse = Player:GetMouse() Mouse.KeyDown:connect(function(k) if _G.infinjump then if k:byte() == 32 then Humanoid = game:GetService("Players").LocalPlayer.Character:FindFirstChildOfClass("Humanoid") Humanoid:ChangeState("Jumping") wait(0.1) Humanoid:ChangeState("Seated") end end end)   local Player = game:GetService("Players").LocalPlayer local Mouse = Player:GetMouse() Mouse.KeyDown:connect(function(k) k = k:lower() if k == "Z" then if _G.infinjump == true then _G.infinjump = false else _G.infinjump = true end end end)
+return
